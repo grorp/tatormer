@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/player_christmas.png" type="Texture" id=2]
+
+[node name="ChristmasPlayer" instance=ExtResource( 1 )]
+jump_height = 450
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+position = Vector2( 9.79991, 15.1453 )
+polygon = PoolVector2Array( 35.3186, -11.6628, 30.4679, -6.25902, 30.6906, 19.3543, 29.7997, 22.6952, 28.2407, 24.2543, 26.9043, 26.0361, 23.7862, 28.0406, 20.2226, 29.5996, 15.3226, 31.1587, 6.19092, 32.9405, -7.61801, 32.4951, -22.0951, 28.7088, -26.7723, 25.5906, -29.6678, 21.5816, -30.7814, 18.4634, -30.5587, -6.0363, -35.4392, -12.852, 37.3998, -12.852 )

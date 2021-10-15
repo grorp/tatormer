@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/player.png" type="Texture" id=2]
+[ext_resource path="res://assets/failed.wav" type="AudioStream" id=3]
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 34.6997, -12.4953, 30.4679, -6.25902, 30.6906, 19.3543, 29.7997, 22.6952, 28.2407, 24.2543, 26.9043, 26.0361, 23.7862, 28.0406, 20.2226, 29.5996, 15.3226, 31.1587, 6.19092, 32.9405, -7.61801, 32.4951, -16.0816, 31.1587, -22.0951, 28.7088, -26.7723, 25.5906, -29.6678, 21.5816, -30.7814, 18.4634, -30.5587, -6.0363, -34.5677, -12.9408, -28.3314, -21.1816, -22.3178, -17.618, -15.6361, -22.0725, -16.7497, -30.0906, -7.17256, -32.7633, -3.60897, -26.527, 3.29549, -26.527, 6.85909, -32.5405, 16.659, -29.8678, 16.2135, -22.0725, 22.0044, -17.3953, 28.9088, -20.9588 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_smoothed = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+editor_draw_limits = true
+
+[node name="FailedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[connection signal="finished" from="FailedSound" to="." method="_on_FailedSound_finished"]
